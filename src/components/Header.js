@@ -1,10 +1,11 @@
 import React from 'react';
+import Menu from './Menu';
 
 const Header = () => {
 
     return(
         <div className="header">
-            <h2>ClimApp</h2>
+            <Menu/>
         </div>
     )
 }

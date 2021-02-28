@@ -7,9 +7,12 @@ const Menu = () => {
 
     return(
         <div className="menu-container">
-            {cities.map((city, i) => {
-                    return (<input key={i} type="button" value={city.name} onClick={getWeather}/>)
-                })}
+            <a href="/">ClimApp</a>
+            <div className="menu__btn">
+                {cities.map((city, i) => {
+                        return (<input key={i} type="button" value={city.name} onClick={getWeather}/>)
+                    })}
+            </div>
         </div>
     )
 }
