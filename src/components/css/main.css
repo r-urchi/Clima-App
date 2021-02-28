@@ -54,6 +54,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .menu-container .menu__btn input {
   background: #2e67bd;
@@ -172,6 +173,38 @@ body {
   color: #ffffff;
   font-size: 1em;
   margin: 1em 0;
+}
+
+@media screen and (max-width: 950px) {
+  .menu-container {
+    flex-direction: column;
+  }
+
+  .menu-container .menu__btn {
+    flex-wrap: wrap;
+  }
+
+  .menu-container .menu__btn input {
+    width: 8em;
+    font-size: 0.7em;
+    margin: 0.5em;
+  }
+
+  .info-container .info__main {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+  }
+
+  .info-container p {
+    margin: 0.5em 0;
+    font-size: 0.7em;
+  }
+
+  .info-container-days h2 {
+    font-size: 1.5em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
