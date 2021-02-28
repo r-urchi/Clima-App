@@ -4,7 +4,7 @@ const FiveCard = ({date, temp, st, hum, wind, max, min}) => {
 
     return(
         <div className="card">
-            <p className="card__date">{date}</p>
+            <p className="card__date">{date.slice(0, -8)}</p>
             <p className="card__temp">Temperatura: {temp}°</p>
             <p className="card__st">Sensación Térmica: {st}°</p>
             <p className="card__hum">Humedad: {hum}%</p>

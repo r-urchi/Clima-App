@@ -8,6 +8,8 @@ const { fiveDays } = useContext(ProviderContext)
 
 // console.log(fiveDays)
 
+
+
     return(
             <div className="info-container-days">
                 <h2>Pronóstico diario</h2>

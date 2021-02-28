@@ -56,7 +56,7 @@ body {
   align-items: center;
 }
 .menu-container .menu__btn input {
-  background: #0c408d;
+  background: #2e67bd;
   border: none;
   border-radius: 3em;
   color: #ffffff;
@@ -70,9 +70,15 @@ body {
   background: #74d2e7;
 }
 .menu-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2em;
   text-decoration: none;
   color: #ffffff;
+}
+.menu-container a img {
+  width: 1.5em;
 }
 
 .info-container {
@@ -164,7 +170,7 @@ body {
 }
 .footer p {
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 1em 0;
 }
 

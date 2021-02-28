@@ -7,7 +7,9 @@ const Menu = () => {
 
     return(
         <div className="menu-container">
-            <a href="/">ClimApp</a>
+            <a href="/">ClimApp 
+                <img src="img/sun.png" alt="ClimApp"/>
+            </a>
             <div className="menu__btn">
                 {cities.map((city, i) => {
                         return (<input key={i} type="button" value={city.name} onClick={getWeather}/>)
@@ -18,3 +20,4 @@ const Menu = () => {
 }
 
 export default Menu;
+
