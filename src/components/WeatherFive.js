@@ -8,13 +8,12 @@ const WeatherFive = () => {
 const { city } = useContext(ProviderContext)
 
 const [dataCityFiveDays, setDatacityFiveDays] = useState(false)
+// const [cinco, setCinco] = useState()
 
-    let fiveDays = []
 
 useEffect(() => {
 
-    setTimeout(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}`)
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}&units=metric`)
         .then(response => {
           return response.json();
         })
@@ -22,15 +21,17 @@ useEffect(() => {
           // console.log(data.list)
          setDatacityFiveDays(data.list)
         });
-        
-    }, 2000);
 }, [city]);
 
-for (let index = 0; index < 40; index++) {
-    if(index % 8 === 1){
-        fiveDays.push(dataCityFiveDays[index]);
-    }
+let fiveDays = []
+    if(dataCityFiveDays){
+        for (let index = 0; index < 40; index++) {
+            if(index % 8 === 1){
+                fiveDays.push(dataCityFiveDays[index]);
+            }
+        }   
 }
+
 
 console.log(fiveDays)
 
@@ -38,9 +39,18 @@ console.log(fiveDays)
             <div className="info-container-days">
                 <h2>Pronóstico diario</h2>
                 <div className="card-five">
-                    {fiveDays.map((day, i) => {
-                            return (<FiveCard key={i}/>)
-                        })}
+                    {fiveDays === [] ? null : <div>{fiveDays.map((day, i) => {
+                            return (<FiveCard 
+                                    key={i} 
+                                    date={day.dt_txt}
+                                    temp={day.main.temp}
+                                    st={day.main.feels_like}
+                                    hum={day.main.humidity}
+                                    wind={day.wind.speed}
+                                    max={day.main.temp_max}
+                                    min={day.main.temp_min}
+                                    />)
+                        })}</div>}
                 </div>
             </div>
     )
