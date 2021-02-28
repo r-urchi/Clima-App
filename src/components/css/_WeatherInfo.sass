@@ -1,25 +1,44 @@
 .info-container
     width: 90%
     height: 100%
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
     align-items: center
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
     background: rgba(9, 52, 109, .5)
     margin: 3em 0 1em 0
     border-radius: 1em
     padding: 2em 0
+    -webkit-box-shadow: 2px 10px 35px 1px rgba(0,0,0,0.75)
     box-shadow: 2px 10px 35px 1px rgba(0,0,0,0.75)
     .info__main
         width: 100%
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
+        -webkit-box-pack: justify
+        -ms-flex-pack: justify
         justify-content: space-between
         padding: 1em 2em
         font-size: 2.5em
     .info__more
         width: 100%
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
+        -ms-flex-pack: distribute
         justify-content: space-around
+        -webkit-box-align: center
+        -ms-flex-align: center
         align-items: center
         padding: 1em 2em
         .info__moreInfo, .info__max-min

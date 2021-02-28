@@ -32,7 +32,7 @@ const WeatherContext = ({children}) => {
     }
 
     useEffect(() => {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_KEY}&units=metric`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_KEY}&units=metric`)
             .then(response => {
               return response.json();
             })
@@ -49,7 +49,7 @@ const WeatherContext = ({children}) => {
     const [dataCityFiveDays, setDatacityFiveDays] = useState(false)
 
     useEffect(() => {
-            fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}&units=metric`)
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}&units=metric`)
             .then(response => {
               return response.json();
             })
