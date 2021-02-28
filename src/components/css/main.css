@@ -29,28 +29,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url(../img/background.jpeg);
 }
 
 .header {
   width: 100%;
-}
-.header .header__img {
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  background: #0077c8;
 }
-.header .header__img h2 {
-  position: absolute;
+.header h2 {
   font-size: 2em;
-  margin-top: 2em;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 1em;
-  border-radius: 50%;
-}
-.header .header__img img {
-  width: 100%;
+  padding: 1.5em 0;
 }
 
 .menu-container {
@@ -76,16 +68,17 @@ body {
 }
 
 .info-container {
-  width: 70%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #09346d;
+  background: rgba(9, 52, 109, 0.5);
   margin: 1em 0;
   border-radius: 1em;
   padding: 2em 0;
+  box-shadow: 2px 10px 35px 1px rgba(0, 0, 0, 0.75);
 }
 .info-container .info__main {
   width: 100%;
@@ -107,12 +100,16 @@ body {
 }
 
 .info-container-days {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 3em 0;
+  background: rgba(9, 52, 109, 0.5);
+  margin: 1em 0;
+  border-radius: 1em;
+  box-shadow: 2px 10px 35px 1px rgba(0, 0, 0, 0.75);
 }
 .info-container-days .card-five {
   width: 100%;
@@ -124,22 +121,27 @@ body {
 .info-container-days .card-five .card {
   width: 12em;
   height: 12em;
-  background: #4190cc;
+  background: rgba(9, 52, 109, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: fflex-start;
   flex-direction: column;
   margin: 1em;
   border-radius: 1em;
   border: 0.1em #fff solid;
+  box-shadow: 2px 10px 35px 1px rgba(0, 0, 0, 0.75);
 }
 .info-container-days .card-five .card p {
   font-size: 0.8em;
-  padding: 0.3em;
+  padding: 0.3em 1em;
 }
 .info-container-days .card-five .card .card__date {
   font-weight: bold;
   font-size: 1em;
+  text-align: center;
+}
+.info-container-days h2 {
+  font-size: 2em;
 }
 
 .footer {

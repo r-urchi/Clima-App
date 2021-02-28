@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from 'react';
 import {WEATHER_KEY} from '../keys';
 export const ProviderContext = createContext();
 
-
 const { Provider } = ProviderContext;
 
 const WeatherContext = ({children}) => {
@@ -20,9 +19,8 @@ const WeatherContext = ({children}) => {
     ])
 
     // ------------------------------------------------------------
-    // -------Info ciudades
+    // -------Info inicio
     // ------------------------------------------------------------
-
 
     const [city, setCity] = useState('Buenos Aires')
     const [dataCity, setDatacity] = useState(false)
@@ -39,14 +37,39 @@ const WeatherContext = ({children}) => {
               return response.json();
             })
             .then(data => {
-              console.log(data)
+              // console.log(data)
                 setDatacity(data)
-                // getWeatherFiveDays(city)
             });
       }, [city]);
+
+
+    // ------------------------------------------------------------
+    // -------Info ciudad proximos 5 dias
+    // ------------------------------------------------------------
+    const [dataCityFiveDays, setDatacityFiveDays] = useState(false)
+
+    useEffect(() => {
+            fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}&units=metric`)
+            .then(response => {
+              return response.json();
+            })
+            .then(data => {
+              // console.log(data.list)
+              setDatacityFiveDays(data.list)
+            });
+      }, [city]);
+      
+    let fiveDays = []
+      if(dataCityFiveDays){
+          for (let index = 0; index < 40; index++) {
+              if(index % 8 === 1){
+                  fiveDays.push(dataCityFiveDays[index]);
+              }
+          }   
+    }
   
     return(
-        <Provider value={{dataCity, getWeather, cities, setCities, city}}>
+        <Provider value={{dataCity, getWeather, cities, setCities, city, fiveDays}}>
         {children}
       </Provider>
     )

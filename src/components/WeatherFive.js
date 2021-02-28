@@ -1,45 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import FiveCard from './FiveCard';
-import {WEATHER_KEY} from '../keys';
 import { ProviderContext }  from '../context/WeatherContext';
 
 const WeatherFive = () => {
 
-const { city } = useContext(ProviderContext)
+const { fiveDays } = useContext(ProviderContext)
 
-const [dataCityFiveDays, setDatacityFiveDays] = useState(false)
-// const [cinco, setCinco] = useState()
-
-
-useEffect(() => {
-
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_KEY}&units=metric`)
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          // console.log(data.list)
-         setDatacityFiveDays(data.list)
-        });
-}, [city]);
-
-let fiveDays = []
-    if(dataCityFiveDays){
-        for (let index = 0; index < 40; index++) {
-            if(index % 8 === 1){
-                fiveDays.push(dataCityFiveDays[index]);
-            }
-        }   
-}
-
-
-console.log(fiveDays)
+// console.log(fiveDays)
 
     return(
             <div className="info-container-days">
                 <h2>Pronóstico diario</h2>
                 <div className="card-five">
-                    {fiveDays === [] ? null : <div>{fiveDays.map((day, i) => {
+                    {fiveDays === [] ? null : <>{fiveDays.map((day, i) => {
                             return (<FiveCard 
                                     key={i} 
                                     date={day.dt_txt}
@@ -50,7 +23,7 @@ console.log(fiveDays)
                                     max={day.main.temp_max}
                                     min={day.main.temp_min}
                                     />)
-                        })}</div>}
+                        })}</>}
                 </div>
             </div>
     )
