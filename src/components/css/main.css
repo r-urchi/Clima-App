@@ -278,6 +278,7 @@ body {
   .menu-container .menu__btn {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    margin-bottom: 0.6em;
   }
 
   .menu-container .menu__btn input {

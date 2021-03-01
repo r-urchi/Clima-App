@@ -39,6 +39,9 @@ const WeatherContext = ({children}) => {
             .then(data => {
               // console.log(data)
                 setDatacity(data)
+            })
+            .catch(error => {
+              console.error('Error:', error);
             });
       }, [city]);
 
@@ -56,6 +59,9 @@ const WeatherContext = ({children}) => {
             .then(data => {
               // console.log(data.list)
               setDatacityFiveDays(data.list)
+            })
+            .catch(error => {
+              console.error('Error:', error);
             });
       }, [city]);
       
