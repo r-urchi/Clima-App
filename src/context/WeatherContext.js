@@ -31,6 +31,13 @@ const WeatherContext = ({children}) => {
       // console.log(e.target.value)
     }
 
+    const searchWeather = (e) =>{
+      e.preventDefault()
+      const {city} = e.target.elements
+      const cityValue = city.value;
+      setCity(cityValue)
+  }
+
     useEffect(() => {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_KEY}&units=metric`)
             .then(response => {
@@ -73,9 +80,9 @@ const WeatherContext = ({children}) => {
               }
           }   
     }
-  
+
     return(
-        <Provider value={{dataCity, getWeather, cities, setCities, city, fiveDays}}>
+        <Provider value={{dataCity, getWeather, cities, setCities, city, fiveDays, searchWeather}}>
         {children}
       </Provider>
     )
